@@ -1,0 +1,15 @@
+{
+  "name": "json_api_formatter",
+  "version": "0.0.0",
+  "description": "This is a test package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sunny khan",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
