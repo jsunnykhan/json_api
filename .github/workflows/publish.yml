@@ -35,7 +35,7 @@ jobs:
         run: pnpm build
 
       - name: Publish Package
-        run: pnpm publish --access public
+        run: pnpm publish --access=public
         working-directory: json_api
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
