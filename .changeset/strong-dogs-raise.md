@@ -1,0 +1,5 @@
+---
+"@jsunnykhan/jsonapi": minor
+---
+
+ignor
