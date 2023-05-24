@@ -1,5 +1,0 @@
----
-"@jsunnykhan/jsonapi": patch
----
-
-sd
