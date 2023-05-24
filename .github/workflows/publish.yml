@@ -1,4 +1,4 @@
-name: Publish Package
+name: Publish
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 
 jobs:
   publish:
+    name: publish
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +17,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16.14'
+          node-version: "16.14"
+          registry-url: https://registry.npmjs.org
 
       - name: Install PNPM
         run: npm install -g pnpm
@@ -24,7 +26,7 @@ jobs:
       - name: Authenticate with npm
         run: pnpm config set always-auth true && echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc
         env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: Install Dependencies
         run: pnpm install
@@ -33,4 +35,7 @@ jobs:
         run: pnpm build
 
       - name: Publish Package
-        run: pnpm release
+        run: pnpm publish --access public
+        working-directory: json_api
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
