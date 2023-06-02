@@ -20,9 +20,13 @@
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
+    "@types/lodash": "^4.14.194",
     "@types/node": "^20.2.3",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4",
     "vitest": "^0.31.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
